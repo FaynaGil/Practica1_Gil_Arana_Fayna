@@ -102,6 +102,7 @@ class FilmList {
     }
 }
 
+
 //=========== DATOS DE EJEMPLO ===================
 
 const peli1 = new Film(1, "Leyendas de Pasión", "Una historia de amor y drama en tiempos de guerra.", 8.4, "leyendas.jpg", 1994, 8.0, 1500, [18,10749]);
@@ -126,7 +127,6 @@ console.log(listaPeliculas.getPopularFilmTitles(1000));
 
 console.log("Películas estrenadas entre 1994 y 1998:");
 console.log(listaPeliculas.getFilmsByDateRange(1994, 1998));
-
 
 
 
