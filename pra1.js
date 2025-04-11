@@ -17,18 +17,18 @@ class Film {
 
 class FilmList {
     constructor() {
-        this.films = []; //Array vacío donde se irán guardando las películas
+        this.films = []; //(this.films = []; es la propiedad) Array vacío donde se irán guardando las películas
     }
 
-    addFilm (film){   //Método para añadir película
+    addFilm (film){   //Método para añadir película al array this.films
         this.films.push(film);
     }
 
-    removeFilm(filmId){  //Método para eliminar película por su Id
+    removeFilm(filmId){  //Método para eliminar película por su Id del array this.films
         this.films = this.films.filter(film => film.id !== filmId);
     }
 
-    showList() {  //Método para mostrar la lista de películas
+    showList() {  //Método para mostrar por consola la lista de películas guardadas
         console.log (this.films);
     }
 
@@ -37,8 +37,10 @@ class FilmList {
     }
     
 
-    getFilmsByDateRange = (startDate, endDate) => {
-
+    getFilmsByDateRange = (startDate, endDate) => {  //Método que devuelve las películas dentro de un rango de fechas
+        return this.films.filter(film =>
+            film.release_date >= startDate && film.release_date <= endDate
+        );
     }
 
     sortFilmsByPopularity = () => {
