@@ -47,8 +47,16 @@ class FilmList {
         this.films.sort ((a, b) => b.popularity - a.popularity); // ordena el array this.films usando sort y compara la propiedad popularity de cada película
     }
     
-    findFilmById() {
-        //Función recursiva
+    findFilmById(filmId, index = 0) { //Función recursiva
+        if (index >= this.films.length) { 
+            return null; //Si llega al final del array y no la encontró devuelve nulo.
+        }
+
+        if (this.films[index].id === filmId) {
+            return this.films[index]; //Si la encuentra devuelve la película
+        }
+
+        return this.findFilmById(filmId, index + 1); //Si no la encuentra en esta posición vuelve a llamarse para buscar en la siguiente posición.
     }
     
     getMostCommonGenre() {
