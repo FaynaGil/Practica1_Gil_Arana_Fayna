@@ -43,8 +43,8 @@ class FilmList {
         );
     }
 
-    sortFilmsByPopularity = () => {
-
+    sortFilmsByPopularity = () => { //Método que ordena las películas por popularidad (de mayor a menor)
+        this.films.sort ((a, b) => b.popularity - a.popularity); // ordena el array this.films usando sort y compara la propiedad popularity de cada película
     }
     
     findFilmById() {
