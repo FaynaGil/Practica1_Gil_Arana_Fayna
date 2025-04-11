@@ -32,8 +32,8 @@ class FilmList {
         console.log (this.films);
     }
 
-    addMultipleFilms = (...films) => {
-
+    addMultipleFilms = (...films) => {   //Método que recibe varias películas como parámetro (rest parameter)
+        films.forEach(film => this.addFilm(film)); //Recorre el array films con forEcah y añade cada película con el método addFilm
     }
     
 
