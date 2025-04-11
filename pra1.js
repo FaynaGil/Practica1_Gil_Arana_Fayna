@@ -1,3 +1,4 @@
+//============== CLASES =================
 class Film {
     constructor(id, title, overview, popularity, poster_path, release_date, vote_average, vote_count, genre_ids) {
         this.id = id;
@@ -12,6 +13,37 @@ class Film {
     }
 
     //Getters y setters
+    get title(){
+        return this._title;
+    }
+
+    set title(newTitle) {
+        this._title = newTitle;
+    }
+
+    get overview() {
+        return this._overview;
+    }
+    
+    set overview(newOverview) {
+        this._overview = newOverview;
+    }
+
+    get popularity(){
+        return this._popularity;
+    } 
+
+    set popularity(newPopularity) {
+        this._popularity = newPopularity;
+    }
+
+    get release_date(){
+        return this.release_date;
+    }
+
+    set release_date(newReleaseDate) {
+        this._release_date = newReleaseDate;
+    }
 
 }
 
@@ -60,13 +92,45 @@ class FilmList {
     }
     
     getMostCommonGenre() {
-        //Uso de reduce
+        //Método no implementado por falta de tiempo
     }
+                  
 
     getPopularFilmTitles() {
-        //Uso de map y filter
+        //Método no implementado por falta de tiempo
+    
     }
 }
+
+//=========== DATOS DE EJEMPLO ===================
+
+const peli1 = new Film(1, "Leyendas de Pasión", "Una historia de amor y drama en tiempos de guerra.", 8.4, "leyendas.jpg", 1994, 8.0, 1500, [18,10749]);
+const peli2 = new Film(2, "Los Puentes de Madison", "Un breve romance cambia sus vidas para siempre.", 8.2, "madison.jpg", 1995, 8.1, 1300, [18, 10749]);
+const peli3 = new Film(3, "El Hombre que Susurraba a los Caballos", "Un hombre con un don ayuda a sanar heridas del pasado", 7.8, "caballos.jpg", 1998, 7.5, 1200, [18, 10751]);
+
+//========== VALIDACIÓN DEL CÓDIGO ===============
+
+const listaPeliculas = new FilmList();
+
+listaPeliculas.addMultipleFilms(peli1, peli2, peli3);
+
+console.log ("Listado de todas las películas:");
+listaPeliculas.showList();
+
+console.log("Buscar película con ID 3:");
+console.log(listaPeliculas.findFilmById(3));
+
+console.log("Películas con más de 1000 votos:");
+console.log(listaPeliculas.getPopularFilmTitles(1000));
+
+
+console.log("Películas estrenadas entre 1994 y 1998:");
+console.log(listaPeliculas.getFilmsByDateRange(1994, 1998));
+
+
+
+
+
 
 
 
