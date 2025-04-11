@@ -17,20 +17,19 @@ class Film {
 
 class FilmList {
     constructor() {
-        
+        this.films = []; //Array vacío donde se irán guardando las películas
     }
 
-    addFilm (film){
-
-    };
-    
-
-    removeFilm (filmId) {
-        
+    addFilm (film){   //Método para añadir película
+        this.films.push(film);
     }
 
-    showList() {
-        
+    removeFilm(filmId){  //Método para eliminar película por su Id
+        this.films = this.films.filter(film => film.id !== filmId);
+    }
+
+    showList() {  //Método para mostrar la lista de películas
+        console.log (this.films);
     }
 
     addMultipleFilms = (...films) => {
